@@ -1,6 +1,6 @@
 package Interview.Array;
 
-import java.util.*;
+// import java.util.Arrays;
 
 public class Reverse{
   public static void main(String args[]) {
@@ -10,11 +10,11 @@ public class Reverse{
     int i = 0;
     int j = arr.length - 1;
 
-    while (i < j) {
-      arr[i] = arr[j];
-      i++;
-      j--;
-    }
+    // while (i < j) {
+    //   arr[i] = arr[j];
+    //   i++;
+    //   j--;
+    // }
 
     System.out.println(Arrays.toString(arr));
   }
