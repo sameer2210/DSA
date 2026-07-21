@@ -52,7 +52,12 @@ public class Que {
 //------------------------------------------------------------------------valid anagram(abc = cba)
 
         String s = "abcde";
-        String t = "edcba";
+        String t = "edcbaa";
+
+        if(s.length() != t.length()){
+            System.out.println(false);
+            return;
+        }
 
         HashMap<Character, Integer> hm = new HashMap<>();
 
@@ -62,18 +67,17 @@ public class Que {
         for (int i = 0; i < t.length(); i++) {
             char ch = t.charAt(i);
 
-            if(hm.get(ch) != null){
-                if(hm.get(ch) == 1){
-                    hm.remove(ch);
-                }else{
-                    hm.put(ch , hm.get(ch) - 1);
-                }
-            }else{
-                System.out.println("not");
+            if(!hm.containsKey(ch)) {
+                System.out.println(false);
+                return;
             }
-            System.out.println(hm.isEmpty());
-
+            if(hm.get(ch) == 1){
+                hm.remove(ch);
+            }else{
+                hm.put(ch , hm.get(ch) - 1);
+            }
         }
+            System.out.println(hm.isEmpty());
 
 
 
